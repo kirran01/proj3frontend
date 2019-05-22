@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+
+.layout {
+ background-color: #000;
+ opacity: .8;
+}
+
+/* .login-btn {
+  
+  
+} */
