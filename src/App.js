@@ -1,36 +1,28 @@
-import React from 'react';
-import './App.css';
-import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl'
+import React, { Component } from 'react'
+import './App.css'
+import { Layout, Header, Navigation, Content } from 'react-mdl'
 import Main from './components/main'
 import { Link } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <div style={{ height: '300px', position: 'relative' }}>
-        <Layout style={{ background: 'url(https://images.pexels.com/photos/1036396/pexels-photo-1036396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) center / cover' }}>
-          <Header transparent title="D R O P" style={{ color: 'white' }}>
+class App extends Component {
+  render() {
+    return (
+      <div className="demo-big-content">
+        <Layout>
+          <Header className="header-color" title="D R O P" scroll>
             <Navigation>
-              <Link to="/favorites">Favorites</Link>
+              <Link to="/favorites">Favorited</Link>
               <Link to="/news">News</Link>
             </Navigation>
           </Header>
-          <Drawer title="What can we find for you?">
-            <Navigation>
-              <a href="/">whats</a>
-              <a href="/">going</a>
-              <a href="/">to</a>
-              <a href="/">go here?</a>
-            </Navigation>
-          </Drawer>
           <Content>
-            <div className="page-content"></div>
+            <div className="page-content" />
             <Main />
           </Content>
         </Layout>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;
+export default App
