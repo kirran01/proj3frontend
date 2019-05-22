@@ -5,6 +5,8 @@ background: linear-gradient(to left, #a2ab58, #636363); /* W3C, IE 10+/ Edge, Fi
 
 }
 
+ 
 .items-grid{
   display:flex;
 }
+
