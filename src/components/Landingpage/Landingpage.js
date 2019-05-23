@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, IconButton, CardText } from 'react-mdl'
 
 class Landing extends Component {
@@ -33,6 +32,7 @@ class Landing extends Component {
                             <CardActions border>
                                 <Button colored><a href={clothing.links.expensive}>Pricey</a></Button>
                                 <Button colored><a href={clothing.links.cheap}>Bid</a></Button>
+                                <Button colored>Favorite</Button>
                             </CardActions>
                             <CardMenu style={{ color: "#fff" }}>
                                 <IconButton name="share" />

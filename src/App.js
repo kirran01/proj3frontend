@@ -21,10 +21,10 @@ class App extends Component {
             scroll
           >
             <Navigation>
-              <Link to="/favorites">Favorited</Link>
+              <Link to="/favorites">Favorites</Link>
               <Link to="/news">News</Link>
-              <Link id="navlink" to="/login">Login</Link>
-              <Link id="navlink" to="/signup">Signup</Link>
+              {/* <Link id="navlink" to="/login">Login</Link>
+              <Link id="navlink" to="/signup">Signup</Link> */}
               <Link className="login-btn" to="/login">
                 Login
               </Link>
