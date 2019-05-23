@@ -26,8 +26,9 @@ class Landing extends Component {
                 <div className='items-grid'>
                     {this.state.clothing.map(clothing => (
                         <Card shadow={3} style={{ minWidth: "450", margin: "auto" }}>
-                            <CardTitle style={{ color: "#fff", height: "176px", background: `url(${clothing.image}) center/cover` }}> {clothing.brand}</CardTitle>
+                            <CardTitle style={{ color: "#fff", height: "176px", background: `url(${clothing.image}) center/cover` }}> </CardTitle>
                             <CardText>
+                                <p>{clothing.brand}</p> 
                                 {clothing.description}
                             </CardText>
                             <CardActions border>
