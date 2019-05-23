@@ -15,7 +15,7 @@ class Login extends Component {
                     <input name="email" className="login-input" type="text" />
                     <label className="login-label">Password</label>
                     <input className="login-input" type="password" name="password" />
-                    <button id="login-button">Login</button>
+                    <input type='submit' value='Login' id="login-button" onClick={this.props.handleLogin}/>
                     <Link className="login-link" to="/signup">Don't have an account? Sign up!</Link>
                 </form>
             </div>

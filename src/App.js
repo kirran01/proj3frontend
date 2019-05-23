@@ -4,6 +4,7 @@ import { Layout, Header, Navigation, Content } from "react-mdl";
 import Main from "./components/main";
 import { Link, Route } from "react-router-dom";
 import Login from './components/Login/Login'
+import Logout from './components/Logout/Logout'
 import Signup from './components/Signup/Signup'
 import axios from 'axios'
 
@@ -28,6 +29,7 @@ class App extends Component {
   //handle input
   handleInput = (e) => {
     this.setState({[e.target.name]: e.target.value})
+    console.log(this.state)
   }
 
   //handle signup
@@ -41,10 +43,38 @@ class App extends Component {
       localStorage.token = res.data.token
       this.setState({loggedIn: true})
     })
+    // .then(res => res.redirect('/'))
+    .catch(err => console.log(err))
+  }
+
+  // LOGOUT
+  handleLogout = () => {
+    this.setState({
+      email: '',
+      password: '',
+      loggedIn: false
+    })
+    console.log(this.state)
+    localStorage.clear()
+  }
+
+  // LOGIN
+  handleLogin = (e) => {
+    e.preventDefault()
+    axios.post('https://dropsproject.herokuapp.com/users/login', {
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(res => {
+    localStorage.token = res.data.token
+    this.setState({loggedIn: true})
+    // console.log(this.state)
+    })
     .catch(err => console.log(err))
   }
   
   render() {
+    console.log(this.state)
     return (
       <div className="demo-big-content">
         <Layout>
@@ -64,13 +94,29 @@ class App extends Component {
               <Link className="login-btn" to="/login">
                 Login
               </Link>
+              <Link className="login-btn" to="/logout">
+                Logout
+              </Link>
               <Link to="/signup">Signup</Link>
             </Navigation>
           </Header>
           <Content>
             <div className="page-content" />
             <Main />
-            <Route path="/login" component={Login} />
+            <Route path="/login" 
+            render={(props) => {
+              return(
+                <Login handleLogin={this.handleLogin}/>
+              )
+            }}
+            />
+            <Route path="/logout" 
+            render={(props) => {
+              return(
+                <Logout handleLogout={this.handleLogout} />
+                )
+              }}
+              />
             <Route path="/signup" 
             render={(props) => {
               return(
