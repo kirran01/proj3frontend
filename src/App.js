@@ -61,10 +61,6 @@ class App extends Component {
               <Link to="/favorites">Favorited</Link>
               <Link to="/news">News</Link>
 
-
-              <Link id="navlink" to="/login">Login</Link>
-              <Link id="navlink" to="/signup">Signup</Link>
-
               <Link className="login-btn" to="/login">
                 Login
               </Link>
