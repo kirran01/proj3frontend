@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 class Signup extends Component {
     render() {
         return (
-            <div>
+            <div className="signup-container">
                 {/* Signup Form */}
-                <form>
-                    <h2>Signup</h2>
-                    <label>Name</label>
-                    <input type="text" />
-                    <label>Email</label>
-                    <input type="text" />
-                    <label>Password</label>
-                    <input type="password" />
+                <form className="form-container2">
+                    <h2 className="signup-title">Signup</h2>
+                    <label className="signup-label">Name</label>
+                    <input name="Name" className="signup-input" type="text" />
+                    <label className="signup-label">Email</label>
+                    <input className="signup-input" name="email" type="text" />
+                    <label className="signup-label">Password</label>
+                    <input className="signup-input" type="password" />
                 </form>
             </div>
         );
