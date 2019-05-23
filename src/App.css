@@ -1,8 +1,7 @@
 .header-color{
-  background: #636363;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #a2ab58, #636363);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #a2ab58, #636363); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+background: #44A08D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #093637, #44A08D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #093637, #44A08D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .items-grid{
@@ -14,4 +13,17 @@ background: linear-gradient(to left, #a2ab58, #636363); /* W3C, IE 10+/ Edge, Fi
   text-decoration:none;
   color:inherit;
 }
+
+/* #navlink{
+font-size: 16px;
+width:4em;
+height:2em;
+color:white;
+background-color: #6c757d;
+padding:2px;
+border:5px solid #6c757d;
+margin:3em auto;
+margin-top:3em;
+} */
+
 
