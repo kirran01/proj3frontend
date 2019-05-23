@@ -23,15 +23,12 @@ class App extends Component {
             <Navigation>
               <Link to="/favorites">Favorited</Link>
               <Link to="/news">News</Link>
-<<<<<<< HEAD
               <Link id="navlink" to="/login">Login</Link>
               <Link id="navlink" to="/signup">Signup</Link>
-=======
               <Link className="login-btn" to="/login">
                 Login
               </Link>
               <Link to="/signup">Signup</Link>
->>>>>>> e4ad115459b00abba52ccf8214418a2c18338899
             </Navigation>
           </Header>
           <Content>

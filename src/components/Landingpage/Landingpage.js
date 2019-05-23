@@ -8,7 +8,6 @@ class Landing extends Component {
         this.state = { activeTab: 0, clothing: [] }
     }
     componentDidMount() {
-
         // will change
         //just updated using deployed link
         fetch("https://dropsproject.herokuapp.com/api/clothing/")
@@ -27,13 +26,13 @@ class Landing extends Component {
                 <div className='items-grid'>
                     {this.state.clothing.map(clothing => (
                         <Card shadow={3} style={{ minWidth: "450", margin: "auto" }}>
-                            <CardTitle style={{ color: "#fff", height: "176px", background: "url(https://images.pexels.com/photos/702350/pexels-photo-702350.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) center/cover" }}> Hoodie</CardTitle>
+                            <CardTitle style={{ color: "#fff", height: "176px", background: `url(${clothing.image}) center/cover` }}> {clothing.brand}</CardTitle>
                             <CardText>
                                 {clothing.description}
                             </CardText>
                             <CardActions border>
-                                <Button colored><a href="https://google.com">Pricey</a></Button>
-                                <Button colored><a href="https://google.com">Bid</a></Button>
+                                <Button colored><a href={clothing.links.expensive}>Pricey</a></Button>
+                                <Button colored><a href={clothing.links.cheap}>Bid</a></Button>
                             </CardActions>
                             <CardMenu style={{ color: "#fff" }}>
                                 <IconButton name="share" />
