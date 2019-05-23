@@ -10,7 +10,8 @@ class Landing extends Component {
     componentDidMount() {
 
         // will change
-        fetch("http://localhost:4060/api/clothing/")
+        //just updated using deployed link
+        fetch("https://dropsproject.herokuapp.com/api/clothing/")
             .then(res => res.json())
             .then(clothing => {
                 this.setState({
