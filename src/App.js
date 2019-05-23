@@ -106,7 +106,7 @@ class App extends Component {
             <Route path="/login" 
             render={(props) => {
               return(
-                <Login handleLogin={this.handleLogin}/>
+                <Login handleLogin={this.handleLogin} handleInput={this.handleInput}/>
               )
             }}
             />
