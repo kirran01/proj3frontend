@@ -33,7 +33,7 @@ class App extends Component {
   //handle signup
   handleSignup = (e) => {
     e.preventDefault()
-    axios.post('https://dropsproject.herokuapp.com/api/users/signup', {
+    axios.post('https://dropsproject.herokuapp.com/users/signup', {
       email: this.state.email,
       password: this.state.password
     })
@@ -60,10 +60,6 @@ class App extends Component {
             <Navigation>
               <Link to="/favorites">Favorited</Link>
               <Link to="/news">News</Link>
-
-
-              <Link id="navlink" to="/login">Login</Link>
-              <Link id="navlink" to="/signup">Signup</Link>
 
               <Link className="login-btn" to="/login">
                 Login
