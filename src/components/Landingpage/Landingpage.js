@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import { Link } from 'react-router-dom'
 import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, IconButton, CardText } from 'react-mdl'
 
 class Landing extends Component {
@@ -25,8 +26,9 @@ class Landing extends Component {
                 <div className='items-grid'>
                     {this.state.clothing.map(clothing => (
                         <Card shadow={3} style={{ minWidth: "450", margin: "auto" }}>
-                            <CardTitle style={{ color: "#fff", height: "176px", background: `url(${clothing.image}) center/cover` }}> {clothing.brand}</CardTitle>
+                            <CardTitle style={{ color: "#fff", height: "176px", background: `url(${clothing.image}) center/cover` }}> </CardTitle>
                             <CardText>
+                                <p>{clothing.brand}</p>
                                 {clothing.description}
                             </CardText>
                             <CardActions border>
