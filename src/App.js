@@ -5,8 +5,45 @@ import Main from "./components/main";
 import { Link, Route } from "react-router-dom";
 import Login from './components/Login/Login'
 import Signup from './components/Signup/Signup'
+import axios from 'axios'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      loggedIn: false
+    }
+  }
+
+  componentDidMount(){
+    if(localStorage.token) {
+      this.setState({loggedIn: true})
+    } else {
+      this.setState({loggedIn: false})
+    }
+  }
+
+  //handle input
+  handleInput = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+  }
+
+  //handle signup
+  handleSignup = (e) => {
+    e.preventDefault()
+    axios.post('https://dropsproject.herokuapp.com/api/users/signup', {
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(res => {
+      localStorage.token = res.data.token
+      this.setState({loggedIn: true})
+    })
+    .catch(err => console.log(err))
+  }
+  
   render() {
     return (
       <div className="demo-big-content">
@@ -23,22 +60,22 @@ class App extends Component {
             <Navigation>
               <Link to="/favorites">Favorited</Link>
               <Link to="/news">News</Link>
-<<<<<<< HEAD
-              <Link id="navlink" to="/login">Login</Link>
-              <Link id="navlink" to="/signup">Signup</Link>
-=======
               <Link className="login-btn" to="/login">
                 Login
               </Link>
               <Link to="/signup">Signup</Link>
->>>>>>> e4ad115459b00abba52ccf8214418a2c18338899
             </Navigation>
           </Header>
           <Content>
             <div className="page-content" />
             <Main />
             <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
+            <Route path="/signup" 
+            render={(props) => {
+              return(
+                <Signup loggedIn={this.state.loggedIn} handleInput={this.handleInput} handleSignup={this.handleSignup}/>
+              )
+            }} />
           </Content>
         </Layout>
       </div>
