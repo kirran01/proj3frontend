@@ -33,7 +33,7 @@ class App extends Component {
   //handle signup
   handleSignup = (e) => {
     e.preventDefault()
-    axios.post('https://dropsproject.herokuapp.com/api/users/signup', {
+    axios.post('https://dropsproject.herokuapp.com/users/signup', {
       email: this.state.email,
       password: this.state.password
     })
