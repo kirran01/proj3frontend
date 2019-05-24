@@ -32,7 +32,6 @@ class Favorites extends Component {
                         <CardActions border>
                             <Button colored><a href={favorites.links.expensive}>Pricey</a></Button>
                             <Button colored><a href={favorites.links.cheap}>Bid</a></Button>
-
                         </CardActions>
                         <CardMenu style={{ color: "#fff" }}>
                         </CardMenu>

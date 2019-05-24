@@ -37,7 +37,7 @@ class Landing extends Component {
     console.log(localStorage.getItem("token"));
     if (localStorage.getItem("token")) {
       //will change
-      Axios.put("http://localhost:4060/users/favorites", {
+      Axios.put("http://localhost:4060/favorites", {
         token: localStorage.getItem("token"),
         clothingId
       })
