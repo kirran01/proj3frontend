@@ -18,17 +18,17 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
-    if(localStorage.token) {
-      this.setState({loggedIn: true})
+  componentDidMount() {
+    if (localStorage.token) {
+      this.setState({ loggedIn: true })
     } else {
-      this.setState({loggedIn: false})
+      this.setState({ loggedIn: false })
     }
   }
 
   //handle input
   handleInput = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value })
     console.log(this.state)
   }
 
@@ -39,12 +39,12 @@ class App extends Component {
       email: this.state.email,
       password: this.state.password
     })
-    .then(res => {
-      localStorage.token = res.data.token
-      this.setState({loggedIn: true})
-    })
-    // .then(res => res.redirect('/'))
-    .catch(err => console.log(err))
+      .then(res => {
+        localStorage.token = res.data.token
+        this.setState({ loggedIn: true })
+      })
+      // .then(res => res.redirect('/'))
+      .catch(err => console.log(err))
   }
 
   // LOGOUT
@@ -65,14 +65,14 @@ class App extends Component {
       email: this.state.email,
       password: this.state.password
     })
-    .then(res => {
-    localStorage.token = res.data.token
-    this.setState({loggedIn: true})
-    // console.log(this.state)
-    })
-    .catch(err => console.log(err))
+      .then(res => {
+        localStorage.token = res.data.token
+        this.setState({ loggedIn: true })
+        // console.log(this.state)
+      })
+      .catch(err => console.log(err))
   }
-  
+
   render() {
     console.log(this.state)
     return (
@@ -88,9 +88,8 @@ class App extends Component {
             scroll
           >
             <Navigation>
-              <Link to="/favorites">Favorited</Link>
+              <Link to="/favorites">Favorites</Link>
               <Link to="/news">News</Link>
-
               <Link className="login-btn" to="/login">
                 Login
               </Link>
@@ -103,26 +102,26 @@ class App extends Component {
           <Content>
             <div className="page-content" />
             <Main />
-            <Route path="/login" 
-            render={(props) => {
-              return(
-                <Login handleLogin={this.handleLogin} handleInput={this.handleInput}/>
-              )
-            }}
-            />
-            <Route path="/logout" 
-            render={(props) => {
-              return(
-                <Logout handleLogout={this.handleLogout} />
+            <Route path="/login"
+              render={(props) => {
+                return (
+                  <Login handleLogin={this.handleLogin} handleInput={this.handleInput} />
                 )
               }}
-              />
-            <Route path="/signup" 
-            render={(props) => {
-              return(
-                <Signup loggedIn={this.state.loggedIn} handleInput={this.handleInput} handleSignup={this.handleSignup}/>
-              )
-            }} />
+            />
+            <Route path="/logout"
+              render={(props) => {
+                return (
+                  <Logout handleLogout={this.handleLogout} />
+                )
+              }}
+            />
+            <Route path="/signup"
+              render={(props) => {
+                return (
+                  <Signup loggedIn={this.state.loggedIn} handleInput={this.handleInput} handleSignup={this.handleSignup} />
+                )
+              }} />
           </Content>
         </Layout>
       </div>
