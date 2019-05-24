@@ -200,10 +200,12 @@ class Landing extends Component {
         return (
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+                    <Tab>All</Tab>
                     <Tab>Tops</Tab>
                     <Tab>Footware</Tab>
                     <Tab>Legs</Tab>
                     <Tab>Accessories</Tab>
+                   
                 </Tabs>
 
 
