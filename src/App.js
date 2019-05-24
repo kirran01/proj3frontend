@@ -82,7 +82,7 @@ class App extends Component {
             className="header-color"
             title={
               <Link id="home-link" to="/">
-                D R O P
+                D R O P Z
               </Link>
             }
             scroll
