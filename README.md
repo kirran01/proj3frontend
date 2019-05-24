@@ -8,7 +8,7 @@ The name of this project is 'Drops' a platform for users to save their favorite 
 
 - gives users the capability to signup via email
 
-####Login
+#### Login
 ![Login](https://github.com/kirran01/proj3frontend/blob/master/images/Login.png)
 
 - login with saved email and password
