@@ -12,6 +12,9 @@ background: linear-gradient(to left, #093637, #44A08D); /* W3C, IE 10+/ Edge, Fi
 #home-link{
   text-decoration:none;
   color:inherit;
+  font-family: 'Ranga', cursive;
+  font-weight: 700;
+  font-size: 28px;
 }
 
 /* #navlink{
