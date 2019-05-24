@@ -50,9 +50,9 @@ class Landing extends Component {
                                 <Button colored><a href={clothing.links.expensive}>Pricey</a></Button>
                                 <Button colored><a href={clothing.links.cheap}>Bid</a></Button>
                                 <Button onClick={() => this.addToFavorites(clothing._id)} colored>Favorite</Button>
+                                <Button colored>Remove</Button>
                             </CardActions>
                             <CardMenu style={{ color: "#fff" }}>
-                                <IconButton name="share" />
                             </CardMenu>
                         </Card>
                     ))}
