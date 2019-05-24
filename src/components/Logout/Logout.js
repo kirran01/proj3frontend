@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class Logout extends Component {
     render() {
         return (
-            <div>
-                <h2>Logout</h2> 
-                <form>
-                    <input type="submit" value="Logout" onClick={this.props.handleLogout}/>
+            <div className='login-container'>
+                <form className='form-container'>
+                <h2 className='login-title'>Logout</h2> 
+                    <input type="submit" value="Logout" onClick={this.props.handleLogout} id='login-button'/>
                 </form>
             </div>
         );
