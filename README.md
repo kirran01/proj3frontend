@@ -9,7 +9,7 @@ The name of this project is 'Drops' a platform for users to save their favorite 
 - gives users the capability to signup via email
 
 ####Login
-![Login]('/images/Login.png')
+![Login](https://github.com/kirran01/proj3frontend/blob/master/images/Login.png)
 
 - login with saved email and password
 
@@ -17,7 +17,7 @@ The name of this project is 'Drops' a platform for users to save their favorite 
 
 #### Newsfeed
 - display users newsfeed
-![Newsfeed]('/images/Newsfeed.png')
+![Newsfeed](https://github.com/kirran01/proj3frontend/blob/master/images/Newsfeed.png)
 
 
 
