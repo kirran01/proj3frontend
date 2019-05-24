@@ -4,7 +4,7 @@
 The name of this project is 'Drops' a platform for users to save their favorite clothing, footwear, accessories, and all other things fashion. Sign in and get news and items based on the things you like!!!
 
 #### Signup
-![Signup]('/images/Signup.png')
+![Signup](https://github.com/kirran01/proj3frontend/blob/master/images/Signup.png)
 
 - gives users the capability to signup via email
 
