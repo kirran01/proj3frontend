@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, IconButton, CardText } from 'react-mdl'
+import Axios from 'axios';
 
 class Landing extends Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Landing extends Component {
     componentDidMount() {
         // will change
         //just updated using deployed link
-        fetch("https://dropsproject.herokuapp.com/api/clothing/")
+        // fetch("https://dropsproject.herokuapp.com/api/clothing/")
+        fetch("http://localhost:4060/api/clothing")
             .then(res => res.json())
             .then(clothing => {
                 this.setState({
@@ -19,6 +21,19 @@ class Landing extends Component {
 
 
             })
+    }
+    addToFavorites = (clothingId) => {
+        console.log(clothingId)
+        console.log(localStorage.getItem("token"))
+        if (localStorage.getItem("token")) {
+            //will change
+            Axios.put('http://localhost:4060/users/favorites', {
+                token: localStorage.getItem("token"),
+                clothingId
+            })
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err))
+        }
     }
     toggleCategories() {
         if (this.state.activeTab === 0) {
@@ -34,7 +49,7 @@ class Landing extends Component {
                             <CardActions border>
                                 <Button colored><a href={clothing.links.expensive}>Pricey</a></Button>
                                 <Button colored><a href={clothing.links.cheap}>Bid</a></Button>
-                                <Button colored>Favorite</Button>
+                                <Button onClick={() => this.addToFavorites(clothing._id)} colored>Favorite</Button>
                             </CardActions>
                             <CardMenu style={{ color: "#fff" }}>
                                 <IconButton name="share" />

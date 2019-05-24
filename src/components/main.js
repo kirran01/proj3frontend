@@ -2,7 +2,6 @@ import React from "react";
 import LandingPage from "./Landingpage/Landingpage";
 import News from "./News/news";
 import Favorites from "./Favorites/Favorites";
-
 import { Switch, Route } from "react-router-dom";
 
 const Main = () => (
